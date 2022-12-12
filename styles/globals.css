@@ -1,26 +1,319 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;900&display=swap");
 
 * {
+  margin: 0;
+  padding: 0;
+  z-index: 0;
   box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+  background-color: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.nav-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100vw;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.sign-in-container {
+  position: absolute;
+  top: 54px;
+  right: 65px;
+  box-shadow: 10px 10px 5px 0px #e5e5e5;
+  -webkit-box-shadow: 10px 10px 5px 0px #e5e5e5;
+  -moz-box-shadow: 10px 10px 5px 0px #e5e5e5;
+  width: 250px;
+  padding: 1.5rem;
+  border: 1px solid #e4e4e4;
+  height: auto;
+}
+
+.login {
+  text-align: end;
+  position: absolute;
+  top: 45px;
+  right: 15px;
+}
+
+.shopping-cart-container {
+  position: absolute;
+  top: 54px;
+  right: 65px;
+  box-shadow: 10px 10px 5px 0px #e5e5e5;
+  -webkit-box-shadow: 10px 10px 5px 0px #e5e5e5;
+  -moz-box-shadow: 10px 10px 5px 0px #e5e5e5;
+  width: 400px;
+  padding: 1.5rem;
+  border: 1px solid #e4e4e4;
+  height: auto;
+}
+
+.desc-large {
+  font-weight: 600;
+  padding: 0.2rem 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.email-desc,
+.password-desc {
+  padding: 1rem 0;
+  color: #b6b3b3;
+}
+
+.email-input,
+.password-input {
+  width: 100%;
+  border: 1px solid #b6b3b3;
+  padding: 0.4rem;
+  border-radius: 5px;
+}
+
+.submit-btn-checkbox-container {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-btn-container {
+  width: 40%;
+  margin-right: 0.3rem;
+}
+
+.submit-btn {
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
+  padding: 0.5rem 0.7rem;
+}
+
+.submit-btn:hover {
+  background-color: #a20401;
+}
+
+.checkbox-container {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox-desc {
+  font-size: 13px;
+  margin-left: 0.3rem;
+}
+
+.to-shopping-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.to-shopping-container:hover {
+  color: #a20401;
+}
+
+.to-shopping-desc {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-right: 0.75rem;
+}
+
+.hamburger-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 20%;
+}
+
+.logo {
+  font-size: 1.9rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.link-style-logo {
+  text-decoration: none;
+  color: #000;
+}
+
+.nav-routes-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+}
+
+.link-style {
+  padding: 0 1rem;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.1rem;
+}
+
+.link-style:hover {
+  color: #a20401;
+}
+
+.icons-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 20%;
+  padding: 0.7rem;
+}
+
+.search {
+  border: none;
+  outline: none;
+}
+
+.search-icon-container,
+.account-icon-container,
+.favourite-icon-container,
+.shopping-cart-icon-container {
+  border: 1px solid #b6b3b3;
+  text-align: center;
+  padding: 0.25rem;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+
+.search-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+}
+
+.clear-icon-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 25px;
+}
+
+.clear-btn-icon {
+  border: none;
+  outline: none;
+}
+
+.search-desc {
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.search-input-container {
+  width: 75%;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  margin: 45px auto;
+}
+
+.search-input {
+  outline: none;
+  border: none;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  padding: 0.6rem;
+  background-color: inherit;
+  width: 96%;
+}
+
+.search-input-btn {
+  padding-top: 0.6rem;
+  background-color: inherit;
+  border: none;
+  outline: none;
+}
+
+.search-icon {
+  background-color: inherit;
+}
+
+.search-product-by-category {
+  text-decoration: none;
+  color: black;
+}
+
+.categories-search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 75%;
+  margin: 15px auto;
+}
+
+.product-categories-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 60%;
+}
+
+.individual-category {
+  width: 90px;
+  text-align: center;
+  margin: 0 10px;
+  border-radius: 15px;
+  border: 1px solid #e4e4e4;
+  padding: 0.4rem 0.8rem;
+}
+
+.individual-category:hover {
+  border: 1px solid rgb(17, 17, 17);
+}
+
+.favourite-icon-container {
+  position: relative;
+}
+
+.shopping-cart-icon-container {
+  position: relative;
+}
+
+.search:hover {
+  color: #a20401;
+}
+
+.search-icon-container:hover {
+  border: 1px solid #a20401;
+}
+
+.account-icon-container:hover {
+  border: 1px solid #a20401;
+}
+
+.favourite-icon-container:hover {
+  border: 1px solid #a20401;
+}
+
+.shopping-cart-icon-container:hover {
+  border: 1px solid #a20401;
+}
+
+.items-count {
+  position: absolute;
+  background-color: #a20401;
+  color: white;
+  top: -8px;
+  right: -10px;
+  font-size: 10px;
+  padding: 0.5rem;
+  width: 20px;
+  height: 20px;
+  padding: 0.2rem;
+  border-radius: 50%;
 }

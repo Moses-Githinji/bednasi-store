@@ -1,17 +1,16 @@
 import React from "react";
-// import Snackbar from '@mui/material/Snackbar';
 import Layout from "../components/Layout";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
-export default function Home() {
+function about() {
   return (
-    <Layout>
+    <Layout title="About Us">
       <NavBar />
-      <div>
-        <main>Content</main>
-      </div>
+      <div>about</div>
       <Footer />
     </Layout>
   );
 }
+
+export default about;
