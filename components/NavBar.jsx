@@ -7,6 +7,10 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import EastIcon from "@mui/icons-material/East";
 import ClearIcon from "@mui/icons-material/Clear";
 import Link from "next/link";
+// import AddIcon from "@mui/icons-material/Add";
+// import RemoveIcon from "@mui/icons-material/Remove";
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import TableChartOutlinedIcon from "@mui/icons-material/TableChartOutlined";
 import router from "next/router";
 
 function NavBar() {
@@ -14,6 +18,7 @@ function NavBar() {
   const [isCartHovering, setIsCartHovering] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [showSideBar, setShowSideBar] = useState(false);
+  const [showIcon, setShowIcon] = useState(false);
 
   //   Shows The Login Element
   const handleMouseOver = () => {
@@ -59,15 +64,21 @@ function NavBar() {
     setShowSideBar(false);
   };
 
+  //   Show Icon on click
+  const setIcon = () => {
+    setShowIcon(true);
+  };
+
   const submitSearch = () => {
     console.log("clicked");
   };
 
   return (
-    <div className="nav-container">
+    <div className={"nav-container"}>
       <div className="hamburger-logo-container">
         <div className="haamburger-container">
           <MenuOutlinedIcon
+            onClick={openSideBar}
             sx={{ fontSize: 30, cursor: "pointer", color: "#A20401" }}
           />
         </div>
@@ -79,18 +90,18 @@ function NavBar() {
       </div>
       <div className="nav-routes-container">
         <div className="about-us-container">
-          <a href="/about" className="link-style">
+          <Link href="/about" className="link-style">
             About
-          </a>
-          <a href="/shop" className="link-style">
+          </Link>
+          <Link href="/shop" className="link-style">
             Shop
-          </a>
-          <a href="/blog" className="link-style">
+          </Link>
+          <Link href="/blog" className="link-style">
             Blog
-          </a>
-          <a href="/contact" className="link-style">
+          </Link>
+          <Link href="/contact" className="link-style">
             Contact Us
-          </a>
+          </Link>
         </div>
       </div>
       <div className="icons-container">
@@ -173,6 +184,7 @@ function NavBar() {
           </div>
         </div>
       )}
+
       {/* Shopping Cart Container shows on hover */}
       {isCartHovering && (
         <div className="shopping-cart-container">
@@ -199,6 +211,7 @@ function NavBar() {
           </div>
         </div>
       )}
+
       {/* Show the Search Component on hover */}
       {showSearch && (
         <div className="search-container">
@@ -255,6 +268,62 @@ function NavBar() {
               <a href="#" className="search-product-by-category">
                 <div className="individual-category">Offices</div>
               </a>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Show SideBar Component */}
+      {showSideBar && (
+        <div className="overall-sidebar-container">
+          <div className="logo-close-component-btn-container">
+            <div className="logo-container">
+              <p className="logo logo-sidebar">BedNasi</p>
+            </div>
+            <button onClick={closeSideBar} className="clear-btn-icon">
+              <ClearIcon
+                className="search clear-icon login sidebar"
+                sx={{
+                  fontSize: 25,
+                  cursor: "pointer",
+                }}
+              />
+            </button>
+          </div>
+          <div className="all-categories-container">
+            <div className="single-category-container">
+              <p>Furniture</p>
+            </div>
+            <div className="single-category-container">
+              <p>Outdoor</p>
+            </div>
+            <div className="single-category-container">
+              <p>Decor & Pillows</p>
+            </div>
+            <div className="single-category-container">
+              <p>Appliances</p>
+            </div>
+            <div className="single-category-container">
+              <p>Bed & Bath</p>
+            </div>
+            <div className="single-category-container">
+              <p>Baby & Kids</p>
+            </div>
+          </div>
+          <div className="recently-viewed-products">
+            <div className="icon-container">
+              <VisibilityOutlinedIcon sx={{ fontSize: 20 }} />
+            </div>
+            <div className="icon-desc-container">
+              <p className="specific-desc">Recently Viewed Products</p>
+            </div>
+          </div>
+          <div className="track-order-container">
+            <div className="icon-container">
+              <TableChartOutlinedIcon sx={{ fontSize: 20 }} />
+            </div>
+            <div className="icon-desc-container">
+              <p className="specific-desc">Track Your Order</p>
             </div>
           </div>
         </div>

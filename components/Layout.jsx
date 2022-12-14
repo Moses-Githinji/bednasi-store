@@ -12,9 +12,7 @@ function Layout({ title, children, description }) {
         {description && <meta name="description" content={description}></meta>}
       </Head>
       {/* <NavBar /> */}
-      <div>
-        <main>{children}</main>
-      </div>
+      <main>{children}</main>
       {/* <Footer /> */}
     </>
   );
