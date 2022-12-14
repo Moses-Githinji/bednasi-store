@@ -15,7 +15,10 @@ import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
-import { Router } from "@mui/icons-material";
+// import { Router } from "@mui/icons-material";
+
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 
 const style = {
   position: "absolute",
@@ -366,17 +369,944 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="actual-banner-info-container">
-        <p className="first-banner-info">
-          big sale off all items up to 50% off
+      <div className="shop-by-department-container select-by-category-container">
+        <p className="shop-by-department select-by-category">
+          Popular Picks in BedNasi
         </p>
-        <div className="coming-soon-link-container">
-          <p className="coming-soon">Coming soon on September</p>
-          <a href="#" className="link-style sale-banner-only">
-            View More
-          </a>
-        </div>
       </div>
+      <Tabs>
+        <TabList className="tab-nav-container">
+          <Tab className="tab-nav-link">Furniture</Tab>
+          <Tab className="tab-nav-link">Outdoor</Tab>
+          <Tab className="tab-nav-link">Decor & Pillows</Tab>
+          <Tab className="tab-nav-link">Appliances</Tab>
+          <Tab className="tab-nav-link">Bed & Bath</Tab>
+          <Tab className="tab-nav-link">Baby & Kids</Tab>
+        </TabList>
+
+        <TabPanel>
+          <div className="daily-flash-sales-products-container products-by-category-tabs-container">
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/plastic-chair.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Affordable Plastic Chair
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.5500</p>
+                  <p className="current-price">Ksh.3500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/dining-table.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Mini Dining Set
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.30,00</p>
+                  <p className="current-price">Ksh.20,00</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/bed.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  King size bed
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.55,500</p>
+                  <p className="current-price">Ksh.41,500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/sofa.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Affordable Sofa
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.53,500</p>
+                  <p className="current-price">Ksh.39,500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            {/* Modal to open a product desc fast */}
+            {openModal && (
+              // <div className="quick-product-desc-container">
+              //   <button onClick={closeModalHandler} className="clear-btn-icon">
+              //     <ClearIcon
+              //       className="search clear-icon login sidebar"
+              //       sx={{
+              //         fontSize: 25,
+              //         cursor: "pointer",
+              //       }}
+              //     />
+              //   </button>
+              // </div>
+              <Modal
+                open={openModalHandler}
+                onClose={closeModalHandler}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+              >
+                <Box sx={style}>
+                  <button
+                    onClick={closeModalHandler}
+                    className="clear-btn-icon modal-only"
+                  >
+                    <ClearIcon
+                      className="search clear-icon "
+                      sx={{
+                        fontSize: 25,
+                        cursor: "pointer",
+                      }}
+                    />
+                  </button>
+                  <Typography
+                    id="modal-modal-title"
+                    variant="h6"
+                    component="h2"
+                  >
+                    Text in a modal
+                  </Typography>
+                  <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                    Duis mollis, est non commodo luctus, nisi erat porttitor
+                    ligula.
+                  </Typography>
+                </Box>
+              </Modal>
+            )}
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="daily-flash-sales-products-container products-by-category-tabs-container">
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/plastic-chair.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Affordable Plastic Chair
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.5500</p>
+                  <p className="current-price">Ksh.3500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/dining-table.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Mini Dining Set
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.30,00</p>
+                  <p className="current-price">Ksh.20,00</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/bed.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  King size bed
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.55,500</p>
+                  <p className="current-price">Ksh.41,500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/sofa.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Affordable Sofa
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.53,500</p>
+                  <p className="current-price">Ksh.39,500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/bed-category.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Affordable Sofa
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.53,500</p>
+                  <p className="current-price">Ksh.39,500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/decor.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Affordable Sofa
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.53,500</p>
+                  <p className="current-price">Ksh.39,500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/toaster.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Affordable Sofa
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.53,500</p>
+                  <p className="current-price">Ksh.39,500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            {/* Modal to open a product desc fast */}
+            {openModal && (
+              // <div className="quick-product-desc-container">
+              //   <button onClick={closeModalHandler} className="clear-btn-icon">
+              //     <ClearIcon
+              //       className="search clear-icon login sidebar"
+              //       sx={{
+              //         fontSize: 25,
+              //         cursor: "pointer",
+              //       }}
+              //     />
+              //   </button>
+              // </div>
+              <Modal
+                open={openModalHandler}
+                onClose={closeModalHandler}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+              >
+                <Box sx={style}>
+                  <button
+                    onClick={closeModalHandler}
+                    className="clear-btn-icon modal-only"
+                  >
+                    <ClearIcon
+                      className="search clear-icon "
+                      sx={{
+                        fontSize: 25,
+                        cursor: "pointer",
+                      }}
+                    />
+                  </button>
+                  <Typography
+                    id="modal-modal-title"
+                    variant="h6"
+                    component="h2"
+                  >
+                    Text in a modal
+                  </Typography>
+                  <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                    Duis mollis, est non commodo luctus, nisi erat porttitor
+                    ligula.
+                  </Typography>
+                </Box>
+              </Modal>
+            )}
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="daily-flash-sales-products-container products-by-category-tabs-container">
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/plastic-chair.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Affordable Plastic Chair
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.5500</p>
+                  <p className="current-price">Ksh.3500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/dining-table.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Mini Dining Set
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.30,00</p>
+                  <p className="current-price">Ksh.20,00</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/bed.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  King size bed
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.55,500</p>
+                  <p className="current-price">Ksh.41,500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/sofa.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Affordable Sofa
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.53,500</p>
+                  <p className="current-price">Ksh.39,500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            {/* Modal to open a product desc fast */}
+            {openModal && (
+              // <div className="quick-product-desc-container">
+              //   <button onClick={closeModalHandler} className="clear-btn-icon">
+              //     <ClearIcon
+              //       className="search clear-icon login sidebar"
+              //       sx={{
+              //         fontSize: 25,
+              //         cursor: "pointer",
+              //       }}
+              //     />
+              //   </button>
+              // </div>
+              <Modal
+                open={openModalHandler}
+                onClose={closeModalHandler}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+              >
+                <Box sx={style}>
+                  <button
+                    onClick={closeModalHandler}
+                    className="clear-btn-icon modal-only"
+                  >
+                    <ClearIcon
+                      className="search clear-icon "
+                      sx={{
+                        fontSize: 25,
+                        cursor: "pointer",
+                      }}
+                    />
+                  </button>
+                  <Typography
+                    id="modal-modal-title"
+                    variant="h6"
+                    component="h2"
+                  >
+                    Text in a modal
+                  </Typography>
+                  <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                    Duis mollis, est non commodo luctus, nisi erat porttitor
+                    ligula.
+                  </Typography>
+                </Box>
+              </Modal>
+            )}
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="daily-flash-sales-products-container products-by-category-tabs-container">
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/plastic-chair.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Affordable Plastic Chair
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.5500</p>
+                  <p className="current-price">Ksh.3500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/dining-table.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Mini Dining Set
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.30,00</p>
+                  <p className="current-price">Ksh.20,00</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/bed.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  King size bed
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.55,500</p>
+                  <p className="current-price">Ksh.41,500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/sofa.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Affordable Sofa
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.53,500</p>
+                  <p className="current-price">Ksh.39,500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            {/* Modal to open a product desc fast */}
+            {openModal && (
+              // <div className="quick-product-desc-container">
+              //   <button onClick={closeModalHandler} className="clear-btn-icon">
+              //     <ClearIcon
+              //       className="search clear-icon login sidebar"
+              //       sx={{
+              //         fontSize: 25,
+              //         cursor: "pointer",
+              //       }}
+              //     />
+              //   </button>
+              // </div>
+              <Modal
+                open={openModalHandler}
+                onClose={closeModalHandler}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+              >
+                <Box sx={style}>
+                  <button
+                    onClick={closeModalHandler}
+                    className="clear-btn-icon modal-only"
+                  >
+                    <ClearIcon
+                      className="search clear-icon "
+                      sx={{
+                        fontSize: 25,
+                        cursor: "pointer",
+                      }}
+                    />
+                  </button>
+                  <Typography
+                    id="modal-modal-title"
+                    variant="h6"
+                    component="h2"
+                  >
+                    Text in a modal
+                  </Typography>
+                  <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                    Duis mollis, est non commodo luctus, nisi erat porttitor
+                    ligula.
+                  </Typography>
+                </Box>
+              </Modal>
+            )}
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="daily-flash-sales-products-container products-by-category-tabs-container">
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/plastic-chair.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Affordable Plastic Chair
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.5500</p>
+                  <p className="current-price">Ksh.3500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/dining-table.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Mini Dining Set
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.30,00</p>
+                  <p className="current-price">Ksh.20,00</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/bed.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  King size bed
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.55,500</p>
+                  <p className="current-price">Ksh.41,500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/sofa.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Affordable Sofa
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.53,500</p>
+                  <p className="current-price">Ksh.39,500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            {/* Modal to open a product desc fast */}
+            {openModal && (
+              // <div className="quick-product-desc-container">
+              //   <button onClick={closeModalHandler} className="clear-btn-icon">
+              //     <ClearIcon
+              //       className="search clear-icon login sidebar"
+              //       sx={{
+              //         fontSize: 25,
+              //         cursor: "pointer",
+              //       }}
+              //     />
+              //   </button>
+              // </div>
+              <Modal
+                open={openModalHandler}
+                onClose={closeModalHandler}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+              >
+                <Box sx={style}>
+                  <button
+                    onClick={closeModalHandler}
+                    className="clear-btn-icon modal-only"
+                  >
+                    <ClearIcon
+                      className="search clear-icon "
+                      sx={{
+                        fontSize: 25,
+                        cursor: "pointer",
+                      }}
+                    />
+                  </button>
+                  <Typography
+                    id="modal-modal-title"
+                    variant="h6"
+                    component="h2"
+                  >
+                    Text in a modal
+                  </Typography>
+                  <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                    Duis mollis, est non commodo luctus, nisi erat porttitor
+                    ligula.
+                  </Typography>
+                </Box>
+              </Modal>
+            )}
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="daily-flash-sales-products-container products-by-category-tabs-container">
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/plastic-chair.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Affordable Plastic Chair
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.5500</p>
+                  <p className="current-price">Ksh.3500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/dining-table.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Mini Dining Set
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.30,00</p>
+                  <p className="current-price">Ksh.20,00</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/bed.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  King size bed
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.55,500</p>
+                  <p className="current-price">Ksh.41,500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            <div className="individual-sale-daily">
+              <button className="modal-opener" onClick={openModalHandler}>
+                Quick View
+              </button>
+              <img
+                src="/sofa.jpg"
+                alt="plastic-chair"
+                className="plastic-chair"
+              />
+              <div className="product-desc-container">
+                <a href="#" className="link-style flash-sale">
+                  Affordable Sofa
+                </a>
+                <div className="price-desc-container">
+                  <p className="previous-price">Ksh.53,500</p>
+                  <p className="current-price">Ksh.39,500</p>
+                </div>
+                <div className="cta-btn-container">
+                  <button className="read-more">Read More</button>
+                  <button className="read-more">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+            {/* Modal to open a product desc fast */}
+            {openModal && (
+              // <div className="quick-product-desc-container">
+              //   <button onClick={closeModalHandler} className="clear-btn-icon">
+              //     <ClearIcon
+              //       className="search clear-icon login sidebar"
+              //       sx={{
+              //         fontSize: 25,
+              //         cursor: "pointer",
+              //       }}
+              //     />
+              //   </button>
+              // </div>
+              <Modal
+                open={openModalHandler}
+                onClose={closeModalHandler}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+              >
+                <Box sx={style}>
+                  <button
+                    onClick={closeModalHandler}
+                    className="clear-btn-icon modal-only"
+                  >
+                    <ClearIcon
+                      className="search clear-icon "
+                      sx={{
+                        fontSize: 25,
+                        cursor: "pointer",
+                      }}
+                    />
+                  </button>
+                  <Typography
+                    id="modal-modal-title"
+                    variant="h6"
+                    component="h2"
+                  >
+                    Text in a modal
+                  </Typography>
+                  <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                    Duis mollis, est non commodo luctus, nisi erat porttitor
+                    ligula.
+                  </Typography>
+                </Box>
+              </Modal>
+            )}
+          </div>
+        </TabPanel>
+      </Tabs>
+
       <Footer />
     </Layout>
   );
