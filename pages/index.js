@@ -10,15 +10,23 @@ import BookmarksOutlinedIcon from "@mui/icons-material/BookmarksOutlined";
 import MilitaryTechOutlinedIcon from "@mui/icons-material/MilitaryTechOutlined";
 import ThumbUpAltOutlinedIcon from "@mui/icons-material/ThumbUpAltOutlined";
 import ClearIcon from "@mui/icons-material/Clear";
-import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
-// import { Router } from "@mui/icons-material";
+import SendIcon from "@mui/icons-material/Send";
+import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import TwitterIcon from "@mui/icons-material/Twitter";
+
+// import people from "../data";
+
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+// import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import Reviews from "../components/Reviews";
 
 const style = {
   position: "absolute",
@@ -1306,7 +1314,90 @@ export default function Home() {
           </div>
         </TabPanel>
       </Tabs>
-
+      <div className="shop-by-department-container select-by-category-container">
+        <p className="shop-by-department select-by-category">
+          Most Popular Blog Posts
+        </p>
+      </div>
+      <div className="popular-blogs-container">
+        <div className="individual-blog-post-container">
+          <div className="blog-post-image-container">
+            <img src="/furniture.jpg" alt="baby-table" className="blog-image" />
+          </div>
+          <p className="blog-post-category">Baby & Kids</p>
+          <p className="blog-post-title">
+            Five best baby tables for this Black Friday!!
+          </p>
+          <div className="author-date-views-container">
+            <span className="author">
+              By <p className="author-name">John Smilga</p>
+            </span>
+            <p className="publishing-date">21st January 2022</p>
+          </div>
+        </div>
+        <div className="individual-blog-post-container">
+          <div className="blog-post-image-container">
+            <img src="/bedroom.jpg" alt="baby-table" className="blog-image" />
+          </div>
+          <p className="blog-post-category">Bedroom</p>
+          <p className="blog-post-title">
+            Give your bedroom a new look this valentines
+          </p>
+          <div className="author-date-views-container">
+            <span className="author">
+              By <p className="author-name">Kate Waithira</p>
+            </span>
+            <p className="publishing-date">14th February 2022</p>
+          </div>
+        </div>
+        <div className="individual-blog-post-container">
+          <div className="blog-post-image-container">
+            <img src="/kitchen.jpg" alt="baby-table" className="blog-image" />
+          </div>
+          <p className="blog-post-category">Kitchen</p>
+          <p className="blog-post-title">
+            Make your kitchen into a beautiful space you love.
+          </p>
+          <div className="author-date-views-container">
+            <span className="author">
+              By <p className="author-name">Devin Makau</p>
+            </span>
+            <p className="publishing-date">12th June 2022</p>
+          </div>
+        </div>
+      </div>
+      <div className="newsletter-container">
+        <div className="text-descriptions-container">
+          <p className="bigger-text">Join our newsletter and get...</p>
+          <p className="smaller-text">
+            Join our email subscription now to get updates on promotions and
+            coupons.
+          </p>
+        </div>
+        <div className="email-input-social-btns-container">
+          <div className="email-input-submit-btn-container">
+            <input
+              type="email"
+              name="email"
+              className="email"
+              id="email"
+              placeholder="Your email here..."
+            />
+            <SendIcon className="send-email" />
+          </div>
+          <div className="socials-container">
+            <button className="facebook-icon">
+              <FacebookRoundedIcon sx={{ fontSize: 30 }} />
+            </button>
+            <button className="twitter-icon">
+              <TwitterIcon sx={{ fontSize: 30 }} />
+            </button>
+            <button className="instagram-icon">
+              <InstagramIcon sx={{ fontSize: 30 }} />
+            </button>
+          </div>
+        </div>
+      </div>
       <Footer />
     </Layout>
   );
