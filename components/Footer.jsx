@@ -131,7 +131,7 @@ function Footer() {
             Need help? Call us: (+254) 719 589 387
           </p>
           <p className="shop-opening-hours">
-            Monday - Friday: 0800 - 1700 / Saturday - Sunday 9:00 - 18:00
+            Monday - Friday: 0800 - 1700 / Saturday & Sunday: CLOSED
           </p>
         </div>
         <div className="payment-modes-container">
